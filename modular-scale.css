@@ -1,0 +1,124 @@
+:root {
+  --minor-second     : 1.067;
+  --major-second     : 1.125;
+  --minor-third      : 1.2;
+  --major-third      : 1.25;
+  --fourth           : 1.333;
+  --augmented-fourth : 1.414;
+  --fifth            : 1.5;
+  --minor-sixth      : 1.6;
+	--golden           : 1.618;
+  --phi              : 1.618;
+  --major-sixth      : 1.667;
+  --minor-seventh    : 1.778;
+	--major-seventh    : 1.875;
+	--octave           : 2;
+  --major-tenth      : 2.5;
+  --major-eleventh   : 2.667;
+  --major-twelfth    : 3;
+  --double-octave    : 4;
+
+  /**
+   * Standard scale
+   * @description moving up the scale
+   */
+	--ms0   : var(--ms-base);
+	--ms1   : calc(var(--ms-ratio) * var(--ms0));
+	--ms2   : calc(var(--ms-ratio) * var(--ms1));
+	--ms3   : calc(var(--ms-ratio) * var(--ms2));
+	--ms4   : calc(var(--ms-ratio) * var(--ms3));
+	--ms5   : calc(var(--ms-ratio) * var(--ms4));
+	--ms6   : calc(var(--ms-ratio) * var(--ms5));
+	--ms7   : calc(var(--ms-ratio) * var(--ms6));
+	--ms8   : calc(var(--ms-ratio) * var(--ms7));
+	--ms9   : calc(var(--ms-ratio) * var(--ms8));
+	--ms10  : calc(var(--ms-ratio) * var(--ms9));
+	--ms11  : calc(var(--ms-ratio) * var(--ms10));
+	--ms12  : calc(var(--ms-ratio) * var(--ms11));
+	--ms13  : calc(var(--ms-ratio) * var(--ms12));
+	--ms14  : calc(var(--ms-ratio) * var(--ms13));
+	--ms15  : calc(var(--ms-ratio) * var(--ms14));
+	--ms16  : calc(var(--ms-ratio) * var(--ms15));
+  /* moving down the scale */
+	--ms-1  : calc(var(--ms0) / var(--ms-ratio));
+	--ms-2  : calc(var(--ms-1) / var(--ms-ratio));
+	--ms-3  : calc(var(--ms-2) / var(--ms-ratio));
+	--ms-4  : calc(var(--ms-3) / var(--ms-ratio));
+	--ms-5  : calc(var(--ms-4) / var(--ms-ratio));
+	--ms-6  : calc(var(--ms-5) / var(--ms-ratio));
+	--ms-7  : calc(var(--ms-6) / var(--ms-ratio));
+	--ms-8  : calc(var(--ms-7) / var(--ms-ratio));
+	--ms-9  : calc(var(--ms-8) / var(--ms-ratio));
+	--ms-10 : calc(var(--ms-9) / var(--ms-ratio));
+  /**
+   * Scale A (= Standard scale)
+   * @description moving up the scale
+   */
+  --msa0   : var(--ms-base-a);
+  --msa1   : calc(var(--ms-ratio) * var(--msa0));
+  --msa2   : calc(var(--ms-ratio) * var(--msa1));
+  --msa3   : calc(var(--ms-ratio) * var(--msa2));
+  --msa4   : calc(var(--ms-ratio) * var(--msa3));
+  --msa5   : calc(var(--ms-ratio) * var(--msa4));
+  --msa6   : calc(var(--ms-ratio) * var(--msa5));
+  --msa7   : calc(var(--ms-ratio) * var(--msa6));
+  --msa8   : calc(var(--ms-ratio) * var(--msa7));
+  --msa9   : calc(var(--ms-ratio) * var(--msa8));
+  --msa10  : calc(var(--ms-ratio) * var(--msa9));
+  --msa11  : calc(var(--ms-ratio) * var(--msa10));
+  --msa12  : calc(var(--ms-ratio) * var(--msa11));
+  --msa13  : calc(var(--ms-ratio) * var(--msa12));
+  --msa14  : calc(var(--ms-ratio) * var(--msa13));
+  --msa15  : calc(var(--ms-ratio) * var(--msa14));
+  --msa16  : calc(var(--ms-ratio) * var(--msa15));
+  /* moving down the scale */
+  --msa-1  : calc(var(--msa0) / var(--ms-ratio));
+  --msa-2  : calc(var(--msa-1) / var(--ms-ratio));
+  --msa-3  : calc(var(--msa-2) / var(--ms-ratio));
+  --msa-4  : calc(var(--msa-3) / var(--ms-ratio));
+  --msa-5  : calc(var(--msa-4) / var(--ms-ratio));
+  --msa-6  : calc(var(--msa-5) / var(--ms-ratio));
+  --msa-7  : calc(var(--msa-6) / var(--ms-ratio));
+  --msa-8  : calc(var(--msa-7) / var(--ms-ratio));
+  --msa-9  : calc(var(--msa-8) / var(--ms-ratio));
+  --msa-10 : calc(var(--msa-9) / var(--ms-ratio));
+  /**
+   * Scale B (= Standard scale)
+   * @description moving up the scale
+   */
+  --msb0   : var(--ms-base-b);
+  --msb1   : calc(var(--ms-ratio) * var(--msb0));
+  --msb2   : calc(var(--ms-ratio) * var(--msb1));
+  --msb3   : calc(var(--ms-ratio) * var(--msb2));
+  --msb4   : calc(var(--ms-ratio) * var(--msb3));
+  --msb5   : calc(var(--ms-ratio) * var(--msb4));
+  --msb6   : calc(var(--ms-ratio) * var(--msb5));
+  --msb7   : calc(var(--ms-ratio) * var(--msb6));
+  --msb8   : calc(var(--ms-ratio) * var(--msb7));
+  --msb9   : calc(var(--ms-ratio) * var(--msb8));
+  --msb10  : calc(var(--ms-ratio) * var(--msb9));
+  --msb11  : calc(var(--ms-ratio) * var(--msb10));
+  --msb12  : calc(var(--ms-ratio) * var(--msb11));
+  --msb13  : calc(var(--ms-ratio) * var(--msb12));
+  --msb14  : calc(var(--ms-ratio) * var(--msb13));
+  --msb15  : calc(var(--ms-ratio) * var(--msb14));
+  --msb16  : calc(var(--ms-ratio) * var(--msb15));
+  /* moving down the scale */
+  --msb-1  : calc(var(--msb0) / var(--ms-ratio));
+  --msb-2  : calc(var(--msb-1) / var(--ms-ratio));
+  --msb-3  : calc(var(--msb-2) / var(--ms-ratio));
+  --msb-4  : calc(var(--msb-3) / var(--ms-ratio));
+  --msb-5  : calc(var(--msb-4) / var(--ms-ratio));
+  --msb-6  : calc(var(--msb-5) / var(--ms-ratio));
+  --msb-7  : calc(var(--msb-6) / var(--ms-ratio));
+  --msb-8  : calc(var(--msb-7) / var(--ms-ratio));
+  --msb-9  : calc(var(--msb-8) / var(--ms-ratio));
+  --msb-10 : calc(var(--msb-9) / var(--ms-ratio));
+  /**
+   * Initialization
+   */
+	--ms-ratio : var(--golden);
+  --ms-base  : 1rem;
+  --ms-base-a  : var(--ms-base);
+  --ms-base-b  : 2.25rem;
+}

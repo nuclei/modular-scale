@@ -1,0 +1,21 @@
+{
+  "name": "modular-scale-css",
+  "version": "0.0.0",
+  "description": "Easily customizable modular scale css custom properties (variables) in pure css.",
+  "main": "modular-scale.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuclei/modular-scale.git"
+  },
+  "keywords": [
+    "css",
+    "layout",
+    "modular-scale"
+  ],
+  "author": "Lukas Oppermann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nuclei/modular-scale/issues"
+  },
+  "homepage": "https://github.com/nuclei/modular-scale#readme"
+}
