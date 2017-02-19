@@ -4,7 +4,7 @@ Easily customizable modular scale css custom properties (variables) in pure CSS.
 [![npm](https://img.shields.io/npm/v/modular-scale-css.svg?style=flat-square)](https://www.npmjs.com/package/modular-scale-css)
 [![npm](https://img.shields.io/npm/dt/modular-scale-css.svg?style=flat-square)](https://www.npmjs.com/package/modular-scale-css) [![license](https://img.shields.io/github/license/nuclei/modular-scale.svg?style=flat-square)](https://github.com/nuclei/modular-scale/blob/master/LICENSE)
 
-## Install
+## Installation
 The easiest way is to grab it via `npm` or `yarn` and move/bundle the file in your build step.
 
 ```bash
@@ -39,9 +39,9 @@ p{
 }
 /* double stranded scale */
 div{
-  font-size: var(--msa0);
-  width: var(--msb10);
-  margin: width: var(--msb-1);
+  font-size: var(--ms_a0); /*use _ to separate the a and b scale*/
+  width: var(--msb_10);
+  margin: width: var(--ms_b-1); /*minus means a step down*/
 }
 ```
 
