@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/nuclei/modular-scale.git"
   },
+  "scripts": {
+    "build": "node-sass src/modular-scale.scss --output dest && mv dest/modular-scale.css modular-scale.css && rm -rf dest"
+  },
   "keywords": [
     "css",
     "layout",
@@ -17,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/nuclei/modular-scale/issues"
   },
-  "homepage": "https://github.com/nuclei/modular-scale#readme"
+  "homepage": "https://github.com/nuclei/modular-scale#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.0"
+  }
 }

@@ -1,0 +1,76 @@
+// Build Variables
+$interationsUp: 16;
+$interationsDown: 10;
+// content of dist css files
+:root {
+  --minor-second     : 1.067;
+  --major-second     : 1.125;
+  --minor-third      : 1.2;
+  --major-third      : 1.25;
+  --fourth           : 1.333;
+  --augmented-fourth : 1.414;
+  --fifth            : 1.5;
+  --minor-sixth      : 1.6;
+  --golden           : 1.618;
+  --phi              : 1.618;
+  --major-sixth      : 1.667;
+  --minor-seventh    : 1.778;
+  --major-seventh    : 1.875;
+  --octave           : 2;
+  --major-tenth      : 2.5;
+  --major-eleventh   : 2.667;
+  --major-twelfth    : 3;
+  --double-octave    : 4;
+
+  /**
+   * Standard scale
+   * @description moving up the scale
+   */
+  --ms0   : var(--ms-base, 1em);
+  // add 1 - 16
+  $var: "";
+  @for $i from 1 through $interationsUp {
+    $var: append($var, #{"* var(--ms0)"});
+    --ms#{$i} : calc(var(--ms-ratio, var(--golden))#{$var});
+  }
+  /* moving down the scale */
+  $var: "";
+  @for $i from 1 through $interationsDown {
+    $var: append($var, #{"/ var(--ms-ratio, var(--golden))"});
+    --ms-#{$i} : calc(var(--ms0)#{$var});
+  }
+  /**
+   * Scale A (= Standard scale)
+   * @description moving up the scale
+   */
+   --ms_a0   : var(--ms-base-a, 1em);
+   // add 1 - 16
+   $var: "";
+   @for $i from 1 through $interationsUp {
+     $var: append($var, #{"* var(--ms_a0)"});
+     --ms_a#{$i} : calc(var(--ms-ratio, var(--golden))#{$var});
+   }
+   /* moving down the scale */
+   $var: "";
+   @for $i from 1 through $interationsDown {
+     $var: append($var, #{"/ var(--ms-ratio, var(--golden))"});
+     --ms_a-#{$i} : calc(var(--ms_a0)#{$var});
+   }
+  /**
+   * Scale B (= Standard scale)
+   * @description moving up the scale
+   */
+   --ms_b0   : var(--ms-base-b, 2.25em);
+   // add 1 - 16
+   $var: "";
+   @for $i from 1 through $interationsUp {
+     $var: append($var, #{"* var(--ms_b0)"});
+     --ms_b#{$i} : calc(var(--ms-ratio, var(--golden))#{$var});
+   }
+   /* moving down the scale */
+   $var: "";
+   @for $i from 1 through $interationsDown {
+     $var: append($var, #{"/ var(--ms-ratio, var(--golden))"});
+     --ms_b-#{$i} : calc(var(--ms_b0)#{$var});
+   }
+}
