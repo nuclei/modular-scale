@@ -11,10 +11,14 @@ The easiest way is to grab it via `npm` or `yarn` and move/bundle the file in yo
 npm i modular-scale-css --save
 ```
 
-## Usage
-The default ratio is the golden-ration `--golden` and the default bases are `1em` for the `--ms`/`--msa` values and `2.25em` for the `--msb` values.
+You need to either link the css file in your html or bundle it with your other css files.
 
-To change which ratio to use, or update the base simply add the following in your css:
+## Usage
+You can either use a simple modular scale by using the `--ms` properties or a double-stranded modular scale (= two modular scales with the same ratio but different base values) by using the `--ms_a` and `--ms_b` properties.
+
+The default ratio is the golden-ration `--golden` and the default bases are `1em` for the `--ms-base`/`--ms-base-a` values and `2.25em` for the `--ms-base-b` values.
+
+To change which ratio to use, or update the bases simply add the following in your css:
 
 ```css
 --ms-ratio: var(--major-third);
@@ -45,6 +49,9 @@ div{
 }
 ```
 
+### Moving up and down on the modular scale
+The normal properties like `--ms3`, `--ms_a5` or `--ms_b2` are multiples of the ratio times the base value to the power of whatever number you used. By using the negative versions like `--ms-1`, `--ms_a-4` or `--ms_b-9` you move down the scale. Those are dividends of the base value by the ratio divided by itself multiple times.
+
 ### Custom ratios
 If you want to use a custom ratio, you can simply add it as the `--ms-ratio` value.
 
@@ -64,7 +71,6 @@ This package includes many ratios from the visual arts, mathematics and music. I
 To learn more about modular scales, visit [modularscale.com](http://www.modularscale.com).
 
 ### Included ratios
-
 Below you find a list of the included ratios. The first column is the CSS custom property used to specify the ratio in your css. See [usage](#usage).
 
 CSS custom property (variable) | Ratio | Value
@@ -87,3 +93,6 @@ CSS custom property (variable) | Ratio | Value
 --major-eleventh | 3:8 | 2.667
 --major-twelfth | 1:3 | 3
 --double-octave | 1:4 | 4
+
+### Why is there a SASS file, you said pure css right?
+Correct, and the file you are using is pure a css file: `modular-scale.css`. However we can not use `calc` operations within `calc` operations, as this is not supported by the spec (even though chrome does still support it). Because of this we have to create the long variables with multiplying/dividing many times. SASS only allows me to create those calculations without writing them out. When you download the package you only need to care for the `.css` file and do NOT need SASS.
