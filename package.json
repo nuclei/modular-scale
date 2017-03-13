@@ -1,6 +1,6 @@
 {
   "name": "modular-scale-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easily customizable modular scale css custom properties (variables) in pure css.",
   "main": "modular-scale.css",
   "repository": {
