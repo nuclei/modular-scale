@@ -30,8 +30,8 @@ $interationsDown: 10;
   // add 1 - 16
   $var: "";
   @for $i from 1 through $interationsUp {
-    $var: append($var, #{"* var(--ms0)"});
-    --ms#{$i} : calc(var(--ms-ratio, var(--golden))#{$var});
+    $var: append($var, #{"* var(--ms-ratio, var(--golden))"});
+    --ms#{$i} : calc(var(--ms0)#{$var});
   }
   /* moving down the scale */
   $var: "";
@@ -47,8 +47,8 @@ $interationsDown: 10;
    // add 1 - 16
    $var: "";
    @for $i from 1 through $interationsUp {
-     $var: append($var, #{"* var(--ms_a0)"});
-     --ms_a#{$i} : calc(var(--ms-ratio, var(--golden))#{$var});
+     $var: append($var, #{"* var(--ms-ratio, var(--golden))"});
+     --ms_a#{$i} : calc(var(--ms_a0)#{$var});
    }
    /* moving down the scale */
    $var: "";
@@ -64,8 +64,8 @@ $interationsDown: 10;
    // add 1 - 16
    $var: "";
    @for $i from 1 through $interationsUp {
-     $var: append($var, #{"* var(--ms_b0)"});
-     --ms_b#{$i} : calc(var(--ms-ratio, var(--golden))#{$var});
+     $var: append($var, #{"* var(--ms-ratio, var(--golden))"});
+     --ms_b#{$i} : calc(var(--ms_b0)#{$var});
    }
    /* moving down the scale */
    $var: "";
