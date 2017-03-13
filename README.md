@@ -60,10 +60,10 @@ If you want to use a custom ratio, you can simply add it as the `--ms-ratio` val
 ```
 
 ## Modular Scale
-A modular scale is a measurement system that provides a set of numbers which you can use for your `font-sizes`, element sizes or negative space. Since it is based on an underlying ration, all numbers in your system are multiples of this ratio and your base, which makes them naturally fit together thus creating a more harmonies layout.
+A modular scale is a measurement system that provides a set of numbers which you can use for your font-sizes, element sizes or negative space. Since it is based on an underlying ration, all numbers in your system are multiples of this ratio and your base, which makes them naturally fit together thus creating a more harmonies layout.
 
 ### What base should I choose?
-A good start is your body text type size. You could also use other font metrics like x-height or an important fixed-width like a sidebar or a major element.
+A good start is your body text size. You could also use other font metrics like x-height or an important fixed-width like a sidebar or a major element.
 
 ### Which ratio is good?
 This package includes many ratios from the visual arts, mathematics and music. If you have no reason to favor any of the provided, you can just try some ratios and see which values work best for your design.
