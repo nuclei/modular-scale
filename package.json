@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/wct",
-    "build": "node-sass src/modular-scale.scss --output dest && mv dest/modular-scale.css modular-scale.css && rm -rf dest"
+    "build": "node-sass src/modular-scale.scss --output dest && mv dest/modular-scale.css modular-scale.css && rm -rf dest",
+    "travis": "npm test"
   },
   "keywords": [
     "css",

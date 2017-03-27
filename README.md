@@ -2,7 +2,7 @@
 Easily customizable modular scale css custom properties (variables) in pure CSS.
 
 [![npm](https://img.shields.io/npm/v/modular-scale-css.svg?style=flat-square)](https://www.npmjs.com/package/modular-scale-css)
-[![npm](https://img.shields.io/npm/dt/modular-scale-css.svg?style=flat-square)](https://www.npmjs.com/package/modular-scale-css) [![license](https://img.shields.io/github/license/nuclei/modular-scale.svg?style=flat-square)](https://github.com/nuclei/modular-scale/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/dt/modular-scale-css.svg?style=flat-square)](https://www.npmjs.com/package/modular-scale-css) [![Build Status](https://img.shields.io/travis/nuclei/modular-scale/master.svg?style=flat-square)](https://travis-ci.org/nuclei/modular-scale) [![license](https://img.shields.io/github/license/nuclei/modular-scale.svg?style=flat-square)](https://github.com/nuclei/modular-scale/blob/master/LICENSE)
 
 ## Installation
 The easiest way is to grab it via `npm` or `yarn` and move/bundle the file in your build step.
