@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Modular scale</title>
+    <script src="../node_modules/web-component-tester/browser.js"></script>
+    <style media="screen">
+      :root{
+        --ms-base: 20px;
+        --ms-ratio: 1.05;
+        --ms-base-a: 20px;
+        --ms-base-b: 18px;
+      }
+      .modular-text{
+        max-height: 100px;
+        max-width: 100vw;
+        overflow: hidden;
+        display: block;
+        clear: both;
+      }
+      .ms-a{
+        color: blue;
+      }
+      .ms-b{
+        color: purple;
+      }
+    </style>
+    <link rel="stylesheet" href="../modular-scale.css">
+  </head>
+  <body>
+    <script type="text/javascript">
+      var html = `<h2>Single-Stranded Modular Scale</h2>`;
+
+      for(i = 15; i >= 0; i--){
+        html += `<div type="ms" modifier="${i}" class="modular-text" style="font-size: var(--ms${i})">This is using --ms${i}</div>`
+      }
+      for(i = 1; i <= 10; i++){
+        html += `<div type="neg_ms" modifier="${i}" class="modular-text" style="font-size: var(--ms-${i})">This is using --ms-${i}</div>`
+      }
+      html += `<hr /><h2>Double-Stranded Modular Scale</h2>`
+
+      for(i = 15; i >= 0; i--){
+        html += `<div type="ms_a" modifier="${i}" class="modular-text ms-a" style="font-size: var(--ms_a${i})">This is using --ms_a${i}</div>
+        <div type="ms_b" modifier="${i}" class="modular-text ms-b" style="font-size: var(--ms_b${i})">This is using --ms_b${i}</div>`
+      }
+      for(i = 1; i <= 10; i++){
+        html += `<div type="neg_ms_a" modifier="${i}" class="modular-text ms-a" style="font-size: var(--ms_a-${i})">This is using --ms_a-${i}</div>
+        <div type="neg_ms_b" modifier="${i}" class="modular-text ms-b" style="font-size: var(--ms_b-${i})">This is using --ms_b-${i}</div>`
+      }
+      document.body.innerHTML = html
+    </script>
+    <script>
+      var testScale = (type, base, ratio, calcFn) => {
+        elements = document.querySelectorAll(`[type=${type}]`)
+        for (let element of elements) {
+          style = window.getComputedStyle(element);
+          calc = calcFn(element.getAttribute('modifier'), base, ratio)
+          actual = parseFloat(style.getPropertyValue('font-size')).toFixed(2)
+          console.log(type + ' '+ element.getAttribute('modifier')+ ': ' + calc + " = " +  actual)
+          assert.equal(calc, actual);
+        }
+      }
+
+        suite('material scales', function() {
+            var elements;
+            var style;
+            var calc;
+            var actual;
+
+            test('check ms', function() {
+              testScale('ms',20,1.05, (mod, base, ratio) => {
+                return parseFloat((base * Math.pow(ratio, mod)).toFixed(2))
+              })
+            });
+
+            test('check neg_ms', function() {
+              testScale('neg_ms',20,1.05, (mod, base, ratio) => {
+                return parseFloat((base / Math.pow(ratio, mod)).toFixed(2))
+              })
+            });
+
+            test('check ms_a', function() {
+              testScale('ms_a',20,1.05, (mod, base, ratio) => {
+                return parseFloat((base * Math.pow(ratio, mod)).toFixed(2))
+              })
+            });
+
+            test('check neg_ms_a', function() {
+              testScale('neg_ms_a',20,1.05, (mod, base, ratio) => {
+                return parseFloat((base / Math.pow(ratio, mod)).toFixed(2))
+              })
+            });
+
+            test('check ms_b', function() {
+              testScale('ms_b',18,1.05, (mod, base, ratio) => {
+                return parseFloat((base * Math.pow(ratio, mod)).toFixed(2))
+              })
+            });
+
+            test('check neg_ms_b', function() {
+              testScale('neg_ms_b',18,1.05, (mod, base, ratio) => {
+                return parseFloat((base / Math.pow(ratio, mod)).toFixed(2))
+              })
+            });
+
+        });
+    </script>
+  </body>
+</html>

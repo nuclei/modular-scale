@@ -8,6 +8,7 @@
     "url": "git+https://github.com/nuclei/modular-scale.git"
   },
   "scripts": {
+    "test": "./node_modules/.bin/wct",
     "build": "node-sass src/modular-scale.scss --output dest && mv dest/modular-scale.css modular-scale.css && rm -rf dest"
   },
   "keywords": [
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/nuclei/modular-scale#readme",
   "devDependencies": {
-    "node-sass": "^4.5.0"
+    "node-sass": "^4.5.0",
+    "web-component-tester": "^5.0.1"
   }
 }
